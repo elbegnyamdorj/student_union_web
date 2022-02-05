@@ -1,5 +1,6 @@
 backend:
   name: git-gateway
+  repo: Sambaa747/student_union_web
   branch: master
   commit_messages:
     create: "Create {{collection}} “{{slug}}”"
