@@ -9,7 +9,7 @@ import twitter from '../img/social/twitter.svg'
 const Footer = class extends React.Component {
   render() {
     return (
-      <footer className='footer has-background-link has-text-white-ter'>
+      <footer className='footer has-background-grey-dark has-text-white-ter'>
         <div className='content has-text-centered'>
           <img
             src={zurag}

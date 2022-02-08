@@ -11,9 +11,22 @@ const ClubPageTemplate = ({ data, location }) => {
 
   return (
     <Layout>
-      <p>{post.frontmatter.title}</p>
-      <p>{post.frontmatter.description}</p>
-      <p>{post.frontmatter.date}</p>
+      <section>
+        <br />
+        <br />
+        <br />
+        <div className='container content'>
+          <div className='columns is-mobile'>
+            <div className='column is-three-fifths is-offset-one-fifth'>
+              <h1 className='title is-size-2 has-text-weight-bold is-bold-light'>
+                {post.frontmatter.title}
+              </h1>
+              <p>{post.frontmatter.description}</p>
+              <br />
+            </div>
+          </div>
+        </div>
+      </section>
     </Layout>
   )
 }
