@@ -8,7 +8,9 @@ import Content, { HTMLContent } from '../components/Content'
 
 const ClubPageTemplate = ({ data, location }) => {
   const post = data.markdownRemark
-
+  let content = post.html
+  let contentComponent = HTMLContent
+  let PostContent = contentComponent || Content
   return (
     <Layout>
       <section>
@@ -16,13 +18,14 @@ const ClubPageTemplate = ({ data, location }) => {
         <br />
         <br />
         <div className='container content'>
-          <div className='columns is-mobile'>
+          <div className='columns '>
             <div className='column is-three-fifths is-offset-one-fifth'>
               <h1 className='title is-size-2 has-text-weight-bold is-bold-light'>
                 {post.frontmatter.title}
               </h1>
               <p>{post.frontmatter.description}</p>
               <br />
+              <PostContent content={content} />
             </div>
           </div>
         </div>
