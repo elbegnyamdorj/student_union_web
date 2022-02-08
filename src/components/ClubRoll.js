@@ -5,10 +5,10 @@ import PreviewCompatibleImage from './PreviewCompatibleImage'
 const ClubRollTemplate = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark
   return (
-    <div className='column is-1 '>
+    <div className='column'>
       {posts &&
         posts.map(({ node: post }) => (
-          <div className='is-parent column is-1' key={post.id}>
+          <div className='is-parent column ' key={post.id}>
             <article className='blog-list-item tile is-child box notification'>
               <header>
                 {post.frontmatter.featuredimage ? (
