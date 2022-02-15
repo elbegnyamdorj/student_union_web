@@ -1,8 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
-import { Helmet } from 'react-helmet'
-import { graphql, Link } from 'gatsby'
+
+import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 
@@ -13,11 +11,11 @@ const ClubPageTemplate = ({ data, location }) => {
   let PostContent = contentComponent || Content
   return (
     <Layout>
-      <section>
+      <section className='p-5'>
         <br />
         <br />
         <br />
-        <div className='container content'>
+        <div className='container content p-4'>
           <div className='columns '>
             <div className='column is-three-fifths is-offset-one-fifth'>
               <h1 className='title is-size-2 has-text-weight-bold is-bold-light'>

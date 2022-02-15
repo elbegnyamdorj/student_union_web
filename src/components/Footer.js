@@ -1,6 +1,5 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
-import zurag from '../img/logo.png'
 
 import facebook from '../img/social/facebook.svg'
 import instagram from '../img/social/instagram.svg'
@@ -10,13 +9,6 @@ const Footer = class extends React.Component {
   render() {
     return (
       <footer className='footer has-background-grey-dark has-text-white-ter'>
-        <div className='content has-text-centered'>
-          <img
-            src={zurag}
-            alt='Kaldi'
-            style={{ width: '14em', height: '10em' }}
-          />
-        </div>
         <div className='content has-text-centered has-background-grey-dark has-text-white-ter'>
           <div className='container has-background-grey-dark has-text-white-ter'>
             <div style={{ maxWidth: '100vw' }} className='columns'>
@@ -25,33 +17,23 @@ const Footer = class extends React.Component {
                   <ul className='menu-list'>
                     <li>
                       <Link to='/' className='navbar-item'>
-                        Home
+                        Нүүр хуудас
                       </Link>
                     </li>
                     <li>
                       <Link className='navbar-item' to='/about'>
-                        About
+                        Тухай
                       </Link>
                     </li>
                     <li>
-                      <Link className='navbar-item' to='/products'>
-                        Products
+                      <Link className='navbar-item' to='/aboutus'>
+                        Бидний тухай
                       </Link>
                     </li>
                     <li>
                       <Link className='navbar-item' to='/contact/examples'>
                         Form Examples
                       </Link>
-                    </li>
-                    <li>
-                      <a
-                        className='navbar-item'
-                        href='/admin/'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                      >
-                        Admin
-                      </a>
                     </li>
                   </ul>
                 </section>
@@ -66,7 +48,7 @@ const Footer = class extends React.Component {
                     </li>
                     <li>
                       <Link className='navbar-item' to='/contact'>
-                        Contact
+                        Холбогдох
                       </Link>
                     </li>
                   </ul>

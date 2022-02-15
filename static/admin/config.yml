@@ -15,7 +15,7 @@ public_folder: /img
 
 collections:
   - name: 'blog'
-    label: 'Blog'
+    label: 'Мэдээ'
     folder: 'src/pages/blog'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
@@ -37,7 +37,7 @@ collections:
     label: 'Клубууд'
     folder: 'src/pages/club'
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: '{{slug}}'
     fields:
       - {
           label: 'Template Key',
@@ -55,7 +55,7 @@ collections:
     label: 'Pages'
     files:
       - file: 'src/pages/index.md'
-        label: 'Landing Page'
+        label: 'Нүүр хуудас'
         name: 'index'
         fields:
           - {
@@ -151,8 +151,8 @@ collections:
             }
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Body', name: 'body', widget: 'markdown' }
-      - file: 'src/pages/products/index.md'
-        label: 'Products Page'
+      - file: 'src/pages/aboutus/index.md'
+        label: 'Бидний тухай'
         name: 'products'
         fields:
           - {
