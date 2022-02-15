@@ -55,5 +55,10 @@ pricing:
     vestibulum quam, iaculis feugiat metus suscipit vel. Sed hendrerit est
     lectus, in accumsan libero facilisis a. Ut eget rhoncus lacus, et commodo
     purus.
-  plans: []
+  plans:
+    - plan: plandwa
+      price: price
+      description: description
+      items:
+        - item
 ---
