@@ -53,7 +53,7 @@ export const IndexPageTemplate = ({
                     <BlogRoll />
                     <div className='column is-12 has-text-centered'>
                       <Link className='btn' to='/blog'>
-                        Бүх мэдээ >>
+                        Бүх мэдээ
                       </Link>
                     </div>
                   </div>

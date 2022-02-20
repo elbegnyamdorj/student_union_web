@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import zurag from '../img/logo.png'
+
 const Navbar = class extends React.Component {
   constructor(props) {
     super(props)
@@ -34,18 +35,17 @@ const Navbar = class extends React.Component {
   render() {
     return (
       <nav
-        className='navbar is-transparent has-shadow is-fixed-top'
+        className='navbar is-transparent has-shadow is-fixed-top '
         role='navigation'
         aria-label='main-navigation'
-        style={{ height: '80px' }}
       >
-        <div className='container '>
+        <div className='container py-5 '>
           <div className='navbar-brand'>
             <Link to='/' className='navbar-item' title='Logo'>
               <img
                 src={zurag}
                 alt='holboo'
-                style={{ width: '90px', height: '20px' }}
+                style={{ width: '110px', height: '28px' }}
               />
             </Link>
             {/* Hamburger menu */}
@@ -89,6 +89,9 @@ const Navbar = class extends React.Component {
                 Санал гомдол
               </Link>
             </div>
+          </div>
+          <div class='navbar-end'>
+            <div class='navbar-item'></div>
           </div>
         </div>
       </nav>
