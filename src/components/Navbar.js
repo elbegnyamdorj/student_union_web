@@ -39,7 +39,7 @@ const Navbar = class extends React.Component {
         role='navigation'
         aria-label='main-navigation'
       >
-        <div className='container py-5 '>
+        <div className='container py-3 '>
           <div className='navbar-brand'>
             <Link to='/' className='navbar-item' title='Logo'>
               <img
