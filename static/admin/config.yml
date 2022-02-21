@@ -2,6 +2,7 @@ backend:
   name: git-gateway
   repo: Sambaa747/student_union_web
   branch: master
+  base_url: http://202.131.4.61/
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
     update: 'Update {{collection}} “{{slug}}”'
