@@ -1,54 +1,57 @@
-import React from 'react'
-import { Link } from 'gatsby'
-
-import zurag from '../img/logo.png'
+import React from "react";
+import { Link } from "gatsby";
+import styles from "../styles/navbar.module.css";
+import zurag from "../img/logo.png";
 
 const Navbar = class extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       active: false,
-      navBarActiveClass: '',
-    }
+      navBarActiveClass: "",
+    };
   }
 
   toggleHamburger() {
     // toggle the active boolean in the state
     this.setState(
-      {
-        active: !this.state.active,
-      },
+      { active: !this.state.active },
       // after state has been updated,
       () => {
         // set the class in state for the navbar accordingly
         this.state.active
           ? this.setState({
-              navBarActiveClass: 'is-active',
+              navBarActiveClass: "is-active",
             })
           : this.setState({
-              navBarActiveClass: '',
-            })
+              navBarActiveClass: "",
+            });
       }
-    )
+    );
   }
 
   render() {
     return (
       <nav
-        className='navbar is-transparent has-shadow is-fixed-top '
-        role='navigation'
-        aria-label='main-navigation'
+        className="navbar is-transparent has-shadow is-fixed-top "
+        role="navigation"
+        aria-label="main-navigation"
       >
-        <div className='container py-3 '>
-          <div className='navbar-brand'>
-            <Link to='/' className='navbar-item' title='Logo'>
-              <img src={zurag} alt='holboo' />
+        <div className="container py-3 ">
+          <div className="navbar-brand">
+            <Link
+              to="/"
+              className="navbar-item"
+              title="Logo"
+              style={{ padding: "0" }}
+            >
+              <img src={zurag} alt="holboo" />
             </Link>
             {/* Hamburger menu */}
             <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-              data-target='navMenu'
-              role='menuitem'
+              data-target="navMenu"
+              role="menuitem"
               tabIndex={0}
               onKeyPress={() => this.toggleHamburger()}
               onClick={() => this.toggleHamburger()}
@@ -59,40 +62,41 @@ const Navbar = class extends React.Component {
             </div>
           </div>
           <div
-            id='navMenu'
+            id="navMenu"
             className={`navbar-menu ${this.state.navBarActiveClass}`}
+            style={{ justifyContent: "space-between" }}
           >
-            <div className='navbar-start has-text-centered is-size-5'>
-              <Link className='navbar-item' to='/'>
+            <div className="navbar-start has-text-centered is-size-5">
+              <Link className="navbar-item" to="/">
                 Нүүр хуудас
               </Link>
-              <Link className='navbar-item' to='/about'>
+              <Link className="navbar-item" to="/about">
                 Тухай
               </Link>
-              <Link className='navbar-item' to='/aboutus'>
+              <Link className="navbar-item" to="/aboutus">
                 Бидний тухай
               </Link>
-              <Link className='navbar-item' to='/club'>
+              <Link className="navbar-item" to="/club">
                 Клуб
               </Link>
-              <Link className='navbar-item' to='/blog'>
+              <Link className="navbar-item" to="/blog">
                 Мэдээ мэдээлэл
               </Link>
-              <Link className='navbar-item' to='/contact'>
+              <Link className="navbar-item" to="/contact">
                 Бидэнтэй хамт
               </Link>
-              <Link className='navbar-item' to='/contact/examples'>
+              <Link className="navbar-item" to="/contact/examples">
                 Санал гомдол
               </Link>
             </div>
           </div>
-          <div class='navbar-end'>
-            <div class='navbar-item'></div>
+          <div class="navbar-end">
+            <div class="navbar-item"></div>
           </div>
         </div>
       </nav>
-    )
+    );
   }
-}
+};
 
-export default Navbar
+export default Navbar;
