@@ -1,13 +1,13 @@
-import * as React from "react";
-import Layout from "../components/Layout";
+import * as React from 'react'
+import Layout from '../components/Layout'
 
 const NotFoundPage = () => (
   <Layout>
     <div>
-      <h1>NOT FOUND</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+      <h1>Алдаа гарлаа</h1>
+      <p>Ийм хуудас байхгүй байна, та линкээ дахин шалгана уу</p>
     </div>
   </Layout>
-);
+)
 
-export default NotFoundPage;
+export default NotFoundPage
