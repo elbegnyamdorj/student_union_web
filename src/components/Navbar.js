@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
-import styles from '../styles/navbar.module.css'
+
 import zurag from '../../static/img/reallogo.svg'
 
 const Navbar = class extends React.Component {
@@ -70,7 +70,7 @@ const Navbar = class extends React.Component {
               <Link className='navbar-item' to='/'>
                 Нүүр хуудас
               </Link>
-              <Link className='navbar-item' to='/about'>
+              <Link className='navbar-item' to='/holbogdoh'>
                 Тухай
               </Link>
               <Link className='navbar-item' to='/aboutus'>

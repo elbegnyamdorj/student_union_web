@@ -4,15 +4,13 @@ import { Link } from 'gatsby'
 import facebook from '../img/social/facebook.svg'
 import instagram from '../img/social/instagram.svg'
 import twitter from '../img/social/twitter.svg'
-import logo from '../img/logo.png'
+
 const Footer = class extends React.Component {
   render() {
     return (
       <footer className='footer has-background-grey-dark has-text-white-ter'>
         <div className='content has-text-centered has-background-grey-dark has-text-white-ter'>
           <div className='container has-background-grey-dark has-text-white-ter'>
-            <img src={logo} alt='holboo' style={{ width: '110px' }} />
-
             <div style={{ maxWidth: '100vw' }} className='columns'>
               <div className='column is-4'>
                 <section className='menu'>
@@ -23,7 +21,7 @@ const Footer = class extends React.Component {
                       </Link>
                     </li>
                     <li>
-                      <Link className='navbar-item' to='/about'>
+                      <Link className='navbar-item' to='/holbogdoh'>
                         Тухай
                       </Link>
                     </li>
