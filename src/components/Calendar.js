@@ -1,7 +1,5 @@
 import React from "react";
 import { graphql, StaticQuery } from "gatsby";
-if (typeof document !== undefined) {
-}
 import Kalend, { CalendarView } from "kalend";
 import "kalend/dist/styles/index.css"; // import styles
 
