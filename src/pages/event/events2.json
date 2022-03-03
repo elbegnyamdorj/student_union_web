@@ -1,12 +1,10 @@
-[
-  {
-    "id": 2,
-    "startAt": "2022-02-27T11:00:00.000Z",
-    "endAt": "2021-02-27T12:00:00.000Z",
-    "timezoneStartAt": "Europe/Berlin",
-    "summary": "Тасартлаа уухуу",
-    "color": "blue",
-    "calendarID": "work",
-    "url": "saa"
-  }
-]
+[{
+  "id": 2,
+  "startAt": "2022-02-27T11:00:00.000Z",
+  "endAt": "2021-02-27T12:00:00.000Z",
+  "timezoneStartAt": "Europe/Berlin",
+  "summary": "Арга хэмжээ тест",
+  "color": "blue",
+  "calendarID": "work",
+  "url": "saa"
+}]
