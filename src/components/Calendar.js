@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql, StaticQuery } from "gatsby";
-
+if (typeof document !== undefined) {
+}
 import Kalend, { CalendarView } from "kalend";
 import "kalend/dist/styles/index.css"; // import styles
 
@@ -46,24 +47,28 @@ const Calendar = ({ data }) => {
   //       url: "saa",
   //     },
   //   ];
-  return (
-    <Kalend
-      onEventClick={onEventClick}
-      // onNewEventClick={onNewEventClick}
-      events={event}
-      initialDate={new Date().toISOString()}
-      hourHeight={60}
-      initialView={CalendarView.MONTH}
-      //   disabledViews={[CalendarView.DAY]}
-      // onSelectView={onSelectView}
-      // selectedView={selectedView}
-      // onPageChange={onPageChange}
-      timeFormat={"24"}
-      weekDayStart={"Monday"}
-      calendarIDsHidden={["work"]}
-      language={"en"}
-    />
-  );
+  if (typeof document !== "undefined") {
+    return (
+      <Kalend
+        onEventClick={onEventClick}
+        // onNewEventClick={onNewEventClick}
+        events={event}
+        initialDate={new Date().toISOString()}
+        hourHeight={60}
+        initialView={CalendarView.MONTH}
+        //   disabledViews={[CalendarView.DAY]}
+        // onSelectView={onSelectView}
+        // selectedView={selectedView}
+        // onPageChange={onPageChange}
+        timeFormat={"24"}
+        weekDayStart={"Monday"}
+        calendarIDsHidden={["work"]}
+        language={"en"}
+      />
+    );
+  } else {
+    return null;
+  }
 };
 
 export default function Events() {

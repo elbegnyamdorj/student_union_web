@@ -1,12 +1,12 @@
 backend:
   name: git-gateway
-  repo: Sambaa747/student_union_web
+  repo: elbegnyamdorj/student_union_web
   branch: master
   # prop base url
-  # base_url: http://202.131.4.61/
+  base_url: https://flamboyant-minsky-451cea.netlify.app
 
   # dev base url
-  base_url: http://localhost:8000/
+  # base_url: http://localhost:8000/
   commit_messages:
     create: 'Create {{collection}} “{{slug}}”'
     update: 'Update {{collection}} “{{slug}}”'
