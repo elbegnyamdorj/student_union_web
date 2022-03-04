@@ -1,6 +1,6 @@
 ---
 templateKey: index-page
-title: СЭЗИС Оюутны холбоо
+title: СЭЗИС ОЮУТНЫ ХОЛБОО ТББ
 image: /img/1.jpg
 heading: "Төрийн "
 subheading: Төрийн бус байгууллага

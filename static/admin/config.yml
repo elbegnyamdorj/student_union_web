@@ -164,8 +164,8 @@ collections:
                   },
                 ],
             }
-      - file: 'src/pages/about/index.md'
-        label: 'About'
+      - file: 'src/pages/holbogdoh/index.md'
+        label: 'Холбогдох'
         name: 'about'
         fields:
           - {
