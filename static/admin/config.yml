@@ -61,23 +61,21 @@ collections:
   - name: 'events'
     label: 'Арга хэмжээнүүд'
     folder: 'src/pages/event'
-    identifier_field: summary
     create: true
-    extension: 'json'
+    slug: '{{summary}}'
     fields:
       - {
           label: 'Template Key',
           name: 'templateKey',
           widget: 'hidden',
-          default: 'blog-post',
+          default: 'event-post',
         }
       - { label: 'startAt', name: 'startAt', widget: 'datetime' }
       - { label: 'endAt', name: 'endAt', widget: 'datetime' }
-      - { label: 'timezoneStartAt', name: 'timezoneStartAt', widget: 'text' }
       - { label: 'summary', name: 'summary', widget: 'text' }
+      - { label: 'body', name: 'body', widget: 'markdown' }
       - { label: 'color', name: 'color', widget: 'text' }
       - { label: 'calendarID', name: 'calendarID', widget: 'text' }
-      - { label: 'url', name: 'url', widget: 'text' }
   - name: 'club'
     label: 'Клубууд'
     folder: 'src/pages/club'
