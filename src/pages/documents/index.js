@@ -17,18 +17,24 @@ const DownloadsPage = () => {
   `)
   return (
     <Layout>
-      <h1>All PDF Downloads</h1>
-      <ul>
-        {data.allFile.edges.map((file, index) => {
-          return (
-            <li key={`pdf-${index}`}>
-              <a href={file.node.publicURL} download>
-                {file.node.name}
-              </a>
-            </li>
-          )
-        })}
-      </ul>
+      <br />
+      <br />
+      <br />
+      <br />
+      <div className='container p-4'>
+        <h1 className='title'>Татаж авах холбоосууд</h1>
+        <ul>
+          {data.allFile.edges.map((file, index) => {
+            return (
+              <li key={`pdf-${index}`}>
+                <a href={file.node.publicURL} download>
+                  {file.node.name}
+                </a>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
     </Layout>
   )
 }
