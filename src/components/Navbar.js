@@ -78,7 +78,7 @@ const Navbar = class extends React.Component {
                       Бидэнтэй хамт
                     </Link>
                     <hr className='navbar-divider' />
-                    <Link className='navbar-item' to='/'>
+                    <Link className='navbar-item' to='/documents'>
                       Баримт бичиг
                     </Link>
                   </div>
