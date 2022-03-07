@@ -30,20 +30,12 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-json`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        typeName: ({ node, object, isArray }) =>
-          // object.event ? `Events` : `Json`,
-          object.typeName || "JsonFiles",
+        path: `${__dirname}/src/pages/event`,
+        name: "events",
       },
     },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     path: `${__dirname}/src/pages/event`,
-    //     name: "events",
-    //   },
-    // },
     {
       resolve: "gatsby-source-filesystem",
       options: {
