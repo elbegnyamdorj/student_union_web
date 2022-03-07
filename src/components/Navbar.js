@@ -67,21 +67,34 @@ const Navbar = class extends React.Component {
             style={{ justifyContent: 'space-between' }}
           >
             <div className='navbar-start has-text-centered is-size-5'>
-              <Link className='navbar-item' to='/'>
+              <Link className='navbar-item ' to='/'>
                 Нүүр хуудас
               </Link>
-              <Link className='navbar-item' to='/aboutus'>
-                Бидний тухай
-              </Link>
+              <div className='navbar-item has-dropdown is-hoverable'>
+                <Link className='navbar-item' to='/aboutus'>
+                  Бидний тухай
+                  <div class='navbar-dropdown is-boxed'>
+                    <Link className='navbar-item' to='/aboutus'>
+                      Бидэнтэй хамт
+                    </Link>
+                    <hr className='navbar-divider' />
+                    <Link className='navbar-item' to='/'>
+                      Баримт бичиг
+                    </Link>
+                  </div>
+                </Link>
+              </div>
               <Link className='navbar-item' to='/club'>
                 Клуб
               </Link>
               <Link className='navbar-item' to='/blog'>
                 Мэдээ мэдээлэл
               </Link>
+
               <Link className='navbar-item' to='/contact'>
-                Бидэнтэй хамт
+                Санал хүсэлт
               </Link>
+
               <Link className='navbar-item' to='/contact/examples'>
                 Санал хүсэлт
               </Link>

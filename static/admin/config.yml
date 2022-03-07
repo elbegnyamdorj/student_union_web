@@ -38,6 +38,26 @@ collections:
       - { label: 'Featured Image', name: 'featuredimage', widget: image }
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: 'Tags', name: 'tags', widget: 'list' }
+  - name: 'pdf'
+    label: 'Бичиг баримтууд'
+    folder: 'src/pages/documents'
+    create: true
+    slug: '{{slug}}'
+    fields:
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'file-post',
+        }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - {
+          label: 'Manual PDF',
+          name: 'manual_pdf',
+          widget: 'file',
+          default: 'pdf өргөтгөлтэйгөөр оруулна уу',
+        }
   - name: 'events'
     label: 'Арга хэмжээнүүд'
     folder: 'src/pages/event'
