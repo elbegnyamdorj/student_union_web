@@ -5,6 +5,24 @@ import Kalend, { CalendarView } from 'kalend'
 import 'kalend/dist/styles/index.css' // import styles
 
 const Calendar = ({ data }) => {
+<<<<<<< HEAD
+  console.log(data);
+  const onEventClick = (e) => {
+    console.log(e);
+  };
+  const events = [
+    {
+      id: 1,
+      startAt: "2022-02-27T18:00:00.000Z",
+      endAt: "2021-02-27T19:00:00.000Z",
+      timezoneStartAt: "Europe/Berlin", // optional
+      summary: "Тасартлаа ууна",
+      color: "blue",
+      calendarID: "work",
+      url: "saa",
+    },
+  ];
+=======
   const { edges: events } = data.allJsonFiles
   var event = []
   events.forEach((el) => {
@@ -46,11 +64,12 @@ const Calendar = ({ data }) => {
   //       url: "saa",
   //     },
   //   ];
+>>>>>>> 45bee6c06f3fd95722771f827a79384278aa4cbc
   return (
     <Kalend
       onEventClick={onEventClick}
       // onNewEventClick={onNewEventClick}
-      events={event}
+      events={events}
       initialDate={new Date().toISOString()}
       hourHeight={60}
       initialView={CalendarView.MONTH}
@@ -70,19 +89,33 @@ export default function Events() {
   return (
     <StaticQuery
       query={graphql`
-        query AllEvents {
-          allJsonFiles {
+        query BlogRollQuerys {
+          allMarkdownRemark(
+            sort: { order: DESC, fields: [frontmatter___date] }
+            filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+          ) {
             edges {
               node {
-                jsonId
-                calendarID
-                color
-                endAt
+                excerpt(pruneLength: 400)
                 id
-                startAt
-                summary
-                timezoneStartAt
-                url
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
+                  templateKey
+                  date(formatString: "MMMM DD, YYYY")
+                  featuredpost
+                  featuredimage {
+                    childImageSharp {
+                      gatsbyImageData(
+                        width: 120
+                        quality: 100
+                        layout: CONSTRAINED
+                      )
+                    }
+                  }
+                }
               }
             }
           }
