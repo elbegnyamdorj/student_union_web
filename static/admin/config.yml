@@ -42,7 +42,7 @@ collections:
     label: 'Арга хэмжээнүүд'
     folder: 'src/pages/event'
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{title}}'
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
       - {
           label: 'Template Key',
@@ -50,9 +50,9 @@ collections:
           widget: 'hidden',
           default: 'events-post',
         }
+      - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'startAt', name: 'startAt', widget: 'datetime' }
       - { label: 'endAt', name: 'endAt', widget: 'datetime' }
-      - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'body', name: 'body', widget: 'markdown' }
       - { label: 'color', name: 'color', widget: 'text' }
       - { label: 'calendarID', name: 'calendarID', widget: 'text' }
