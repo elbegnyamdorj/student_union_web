@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, StaticQuery } from "gatsby";
+import { graphql, Link, StaticQuery } from "gatsby";
 
 import Kalend, { CalendarView } from "kalend";
 import "kalend/dist/styles/index.css"; // import styles
@@ -12,7 +12,7 @@ const Calendar = ({ data }) => {
   });
   console.log(final_events);
   const onEventClick = (e) => {
-    console.log(e);
+    <Link to="/events"></Link>;
   };
   // const events = [
   //   {
@@ -34,7 +34,7 @@ const Calendar = ({ data }) => {
       initialDate={new Date().toISOString()}
       hourHeight={60}
       initialView={CalendarView.MONTH}
-      //   disabledViews={[CalendarView.DAY]}
+      disabledViews={[CalendarView.DAY]}
       // onSelectView={onSelectView}
       // selectedView={selectedView}
       // onPageChange={onPageChange}
