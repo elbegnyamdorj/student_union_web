@@ -5,27 +5,32 @@ import Kalend, { CalendarView } from 'kalend'
 import 'kalend/dist/styles/index.css' // import styles
 
 const Calendar = ({ data }) => {
-  console.log(data)
+  const { edges: events } = data.allMarkdownRemark
+  const final_events = []
+  events.forEach((element) => {
+    final_events.push(element.node.frontmatter)
+  })
+  console.log(final_events)
   const onEventClick = (e) => {
     console.log(e)
   }
-  const events = [
-    {
-      id: 1,
-      startAt: '2022-02-27T18:00:00.000Z',
-      endAt: '2021-02-27T19:00:00.000Z',
-      timezoneStartAt: 'Europe/Berlin', // optional
-      summary: 'Тасартлаа ууна',
-      color: 'blue',
-      calendarID: 'work',
-      url: 'saa',
-    },
-  ]
+  // const events = [
+  //   {
+  //     id: 1,
+  //     startAt: "2022-02-27T18:00:00.000Z",
+  //     endAt: "2021-02-27T19:00:00.000Z",
+  //     timezoneStartAt: "Europe/Berlin", // optional
+  //     summary: "Тасартлаа ууна",
+  //     color: "blue",
+  //     calendarID: "work",
+  //     url: "saa",
+  //   },
+  // ];
   return (
     <Kalend
       onEventClick={onEventClick}
       // onNewEventClick={onNewEventClick}
-      events={events}
+      events={final_events}
       initialDate={new Date().toISOString()}
       hourHeight={60}
       initialView={CalendarView.MONTH}
@@ -45,10 +50,10 @@ export default function Events() {
   return (
     <StaticQuery
       query={graphql`
-        query BlogRollQuerys {
+        query EventQuery {
           allMarkdownRemark(
             sort: { order: DESC, fields: [frontmatter___date] }
-            filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
+            filter: { frontmatter: { templateKey: { eq: "event-post" } } }
           ) {
             edges {
               node {
@@ -61,16 +66,12 @@ export default function Events() {
                   title
                   templateKey
                   date(formatString: "MMMM DD, YYYY")
-                  featuredpost
-                  featuredimage {
-                    childImageSharp {
-                      gatsbyImageData(
-                        width: 120
-                        quality: 100
-                        layout: CONSTRAINED
-                      )
-                    }
-                  }
+                  summary
+                  startAt
+                  endAt
+                  color
+
+                  calendarID
                 }
               }
             }
