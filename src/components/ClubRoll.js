@@ -40,11 +40,13 @@ const ClubRollTemplate = ({ data }) => {
                   </span>
                 </p>
               </header>
-              <p>
+              <p className='level'>
                 {post.excerpt}
-                <br />
-                <br />
-                <Link className='button' to={post.fields.slug}>
+
+                <Link
+                  className='level-right button is-link'
+                  to={post.fields.slug}
+                >
                   Дэлгэрэнгүй унших →
                 </Link>
               </p>

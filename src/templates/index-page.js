@@ -5,8 +5,8 @@ import { getImage } from 'gatsby-plugin-image'
 import loadable from '@loadable/component'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
-import BlogRoll from '../components/BlogRoll'
 import FullWidthImage from '../components/FullWidthImage'
+import NewsRoll from '../components/IndexPageNewsRoll'
 // import Calendar from "../components/Calendar";
 const Calendar = loadable(() => import('./../components/Calendar'))
 // eslint-disable-next-line
@@ -59,7 +59,8 @@ export const IndexPageTemplate = ({
                     <h3 className='has-text-weight-semibold is-size-2'>
                       Мэдээ мэдээлэл
                     </h3>
-                    <BlogRoll />
+
+                    <NewsRoll />
                     <div className='column is-12 has-text-centered'>
                       <Link className='btn' to='/news'>
                         Бүх мэдээ
