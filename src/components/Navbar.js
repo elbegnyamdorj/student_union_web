@@ -95,9 +95,6 @@ const Navbar = class extends React.Component {
                 Санал хүсэлт
               </Link>
 
-              <Link className='navbar-item' to='/contact/examples'>
-                Санал хүсэлт
-              </Link>
               <Link className='navbar-item' to='/holbogdoh'>
                 Холбогдох
               </Link>
