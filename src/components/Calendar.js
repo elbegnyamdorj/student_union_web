@@ -1,36 +1,31 @@
-import React from "react";
-import { graphql, StaticQuery } from "gatsby";
+import React from 'react'
+import { graphql, StaticQuery } from 'gatsby'
 
-import Kalend, { CalendarView } from "kalend";
-import "kalend/dist/styles/index.css"; // import styles
+import Kalend, { CalendarView } from 'kalend'
+import 'kalend/dist/styles/index.css' // import styles
 
 const Calendar = ({ data }) => {
-  const { edges: events } = data.allMarkdownRemark;
-  const final_events = [];
-  events.forEach((element) => {
-    final_events.push(element.node.frontmatter);
-  });
-  console.log(final_events);
+  console.log(data)
   const onEventClick = (e) => {
-    console.log(e);
-  };
-  // const events = [
-  //   {
-  //     id: 1,
-  //     startAt: "2022-02-27T18:00:00.000Z",
-  //     endAt: "2021-02-27T19:00:00.000Z",
-  //     timezoneStartAt: "Europe/Berlin", // optional
-  //     summary: "Тасартлаа ууна",
-  //     color: "blue",
-  //     calendarID: "work",
-  //     url: "saa",
-  //   },
-  // ];
+    console.log(e)
+  }
+  const events = [
+    {
+      id: 1,
+      startAt: '2022-02-27T18:00:00.000Z',
+      endAt: '2021-02-27T19:00:00.000Z',
+      timezoneStartAt: 'Europe/Berlin', // optional
+      summary: 'Тасартлаа ууна',
+      color: 'blue',
+      calendarID: 'work',
+      url: 'saa',
+    },
+  ]
   return (
     <Kalend
       onEventClick={onEventClick}
       // onNewEventClick={onNewEventClick}
-      events={final_events}
+      events={events}
       initialDate={new Date().toISOString()}
       hourHeight={60}
       initialView={CalendarView.MONTH}
@@ -38,22 +33,22 @@ const Calendar = ({ data }) => {
       // onSelectView={onSelectView}
       // selectedView={selectedView}
       // onPageChange={onPageChange}
-      timeFormat={"24"}
-      weekDayStart={"Monday"}
-      calendarIDsHidden={["work"]}
-      language={"en"}
+      timeFormat={'24'}
+      weekDayStart={'Monday'}
+      calendarIDsHidden={['work']}
+      language={'en'}
     />
-  );
-};
+  )
+}
 
 export default function Events() {
   return (
     <StaticQuery
       query={graphql`
-        query EventQuery {
+        query BlogRollQuerys {
           allMarkdownRemark(
             sort: { order: DESC, fields: [frontmatter___date] }
-            filter: { frontmatter: { templateKey: { eq: "event-post" } } }
+            filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
           ) {
             edges {
               node {
@@ -66,12 +61,16 @@ export default function Events() {
                   title
                   templateKey
                   date(formatString: "MMMM DD, YYYY")
-                  summary
-                  startAt
-                  endAt
-                  color
-
-                  calendarID
+                  featuredpost
+                  featuredimage {
+                    childImageSharp {
+                      gatsbyImageData(
+                        width: 120
+                        quality: 100
+                        layout: CONSTRAINED
+                      )
+                    }
+                  }
                 }
               }
             }
@@ -80,5 +79,5 @@ export default function Events() {
       `}
       render={(data, count) => <Calendar data={data} />}
     />
-  );
+  )
 }
