@@ -79,10 +79,11 @@ collections:
           widget: "hidden",
           default: "event-post",
         }
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "startAt", name: "startAt", widget: "datetime" }
-      - { label: "endAt", name: "endAt", widget: "datetime" }
-      - { label: "body", name: "body", widget: "markdown" }
+      - { label: "Гарчиг", name: "title", widget: "string" }
+      - { label: "Эхлэх хугацаа", name: "startAt", widget: "datetime" }
+      - { label: "Дуусах хугацаа", name: "endAt", widget: "datetime" }
+      - { label: "Зураг", name: "featuredimage", widget: "image" }
+      - { label: "Дэлгэрэнгүй", name: "body", widget: "markdown" }
       - {
           label: "color",
           name: "color",

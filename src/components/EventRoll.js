@@ -5,14 +5,14 @@ import PreviewCompatibleImage from "./PreviewCompatibleImage";
 const EventRoll = ({ data }) => {
   const { edges: posts } = data.allMarkdownRemark;
   return (
-    <div className="column">
+    <div className="columns is-multiline">
       {posts &&
         posts.map(({ node: post }) => (
-          <div className="is-parent column " key={post.id}>
-            <article className="blog-list-item tile is-child box notification">
+          <div className="is-parent column is-6" key={post.id}>
+            <article className="card">
               <header>
                 {post.frontmatter.featuredimage ? (
-                  <div className="featured-thumbnail">
+                  <div className="card-image">
                     <PreviewCompatibleImage
                       imageInfo={{
                         image: post.frontmatter.featuredimage,
@@ -27,7 +27,7 @@ const EventRoll = ({ data }) => {
                     />
                   </div>
                 ) : null}
-                <p className="post-meta">
+                <p className="card-content">
                   <Link
                     className="title has-text-primary is-size-4"
                     to={post.fields.slug}
@@ -35,14 +35,12 @@ const EventRoll = ({ data }) => {
                     {post.frontmatter.title}
                   </Link>
                   <span> </span>
-                  <span className="subtitle is-size-5 is-block">
+                  <span className="content subtitle is-size-5 is-block">
                     {post.frontmatter.description}
                   </span>
                 </p>
               </header>
-              <p className="level">
-                {post.excerpt}
-
+              <p className="content">
                 <Link
                   className="level-right button is-link"
                   to={post.fields.slug}
@@ -57,34 +55,39 @@ const EventRoll = ({ data }) => {
   );
 };
 
-export default function ClubRoll() {
+export default function UfePediaRoll() {
   return (
     <StaticQuery
       query={graphql`
-        query EventRollQuery {
+        query EventQueryForEventPage {
           allMarkdownRemark(
-            sort: { fields: frontmatter___title, order: ASC }
-            filter: { frontmatter: { templateKey: { eq: "club-post" } } }
+            sort: { order: DESC, fields: [frontmatter___date] }
+            filter: { frontmatter: { templateKey: { eq: "event-post" } } }
           ) {
             edges {
               node {
+                excerpt(pruneLength: 400)
                 id
                 fields {
                   slug
                 }
                 frontmatter {
                   title
-                  date(formatString: "YYYY MMMM DD")
+                  templateKey
+                  date(formatString: "MMMM DD, YYYY")
+                  summary
+                  startAt
+                  endAt
                   featuredimage {
                     childImageSharp {
                       gatsbyImageData(
-                        width: 400
-                        height: 180
+                        width: 800
+                        height: 400
                         layout: CONSTRAINED
                       )
                     }
                   }
-                  description
+                  color
                 }
               }
             }
