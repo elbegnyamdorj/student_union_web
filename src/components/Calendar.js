@@ -1,19 +1,19 @@
-import React from 'react'
-import { graphql, StaticQuery } from 'gatsby'
+import React from "react";
+import { graphql, Link, StaticQuery } from "gatsby";
 
-import Kalend, { CalendarView } from 'kalend'
-import 'kalend/dist/styles/index.css' // import styles
+import Kalend, { CalendarView } from "kalend";
+import "kalend/dist/styles/index.css"; // import styles
 
 const Calendar = ({ data }) => {
-  const { edges: events } = data.allMarkdownRemark
-  const final_events = []
+  const { edges: events } = data.allMarkdownRemark;
+  const final_events = [];
   events.forEach((element) => {
-    final_events.push(element.node.frontmatter)
-  })
-  console.log(final_events)
+    final_events.push(element.node.frontmatter);
+  });
+  console.log(final_events);
   const onEventClick = (e) => {
-    console.log(e)
-  }
+    <Link to="/events"></Link>;
+  };
   // const events = [
   //   {
   //     id: 1,
@@ -34,17 +34,17 @@ const Calendar = ({ data }) => {
       initialDate={new Date().toISOString()}
       hourHeight={60}
       initialView={CalendarView.MONTH}
-      //   disabledViews={[CalendarView.DAY]}
+      disabledViews={[CalendarView.DAY]}
       // onSelectView={onSelectView}
       // selectedView={selectedView}
       // onPageChange={onPageChange}
-      timeFormat={'24'}
-      weekDayStart={'Monday'}
-      calendarIDsHidden={['work']}
-      language={'en'}
+      timeFormat={"24"}
+      weekDayStart={"Monday"}
+      calendarIDsHidden={["work"]}
+      language={"en"}
     />
-  )
-}
+  );
+};
 
 export default function Events() {
   return (
@@ -80,5 +80,5 @@ export default function Events() {
       `}
       render={(data, count) => <Calendar data={data} />}
     />
-  )
+  );
 }
