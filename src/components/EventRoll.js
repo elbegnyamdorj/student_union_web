@@ -3,6 +3,22 @@ import { Link, graphql, StaticQuery } from "gatsby";
 import PreviewCompatibleImage from "./PreviewCompatibleImage";
 
 const EventRoll = ({ data }) => {
+  const dateFormatter = (dt) => {
+    dt = new Date(dt);
+    var year = dt.getFullYear();
+    var month = dt.getUTCMonth() + 1;
+    var day = dt.getDate();
+
+    var time = dt.getHours();
+    var minute = dt.getMinutes();
+
+    month = month < 10 ? "0" + month : month;
+    day = day < 10 ? "0" + day : day;
+    time = time < 10 ? "0" + time : time;
+    minute = minute < 10 ? "0" + minute : minute;
+
+    return `${year}/${month}/${day} ${time}:${minute}`;
+  };
   const { edges: posts } = data.allMarkdownRemark;
   return (
     <div className="columns is-multiline">
@@ -35,8 +51,17 @@ const EventRoll = ({ data }) => {
                     {post.frontmatter.title}
                   </Link>
                   <span> </span>
-                  <span className="content subtitle is-size-5 is-block">
-                    {post.frontmatter.description}
+                  <span
+                    className="content subtitle is-size-5 is-block"
+                    style={{ margin: 0 }}
+                  >
+                    Эхлэх хугацаа: {dateFormatter(post.frontmatter.startAt)}
+                  </span>
+                  <span
+                    className="content subtitle is-size-5 is-block"
+                    style={{ margin: 0 }}
+                  >
+                    Дуусах хугацаа: {dateFormatter(post.frontmatter.startAt)}
                   </span>
                 </p>
               </header>
