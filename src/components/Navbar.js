@@ -90,6 +90,9 @@ const Navbar = class extends React.Component {
               <Link className='navbar-item' to='/news'>
                 Мэдээ мэдээлэл
               </Link>
+              <Link className='navbar-item' to='/ufepedia'>
+                UFEpedia
+              </Link>
 
               <Link className='navbar-item' to='/contact'>
                 Санал хүсэлт
