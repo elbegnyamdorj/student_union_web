@@ -33,11 +33,11 @@ const Navbar = class extends React.Component {
   render() {
     return (
       <nav
-        className='navbar is-transparent has-shadow is-fixed-top '
+        className='navbar is-transparent has-shadow is-fixed-top  '
         role='navigation'
         aria-label='main-navigation'
       >
-        <div className='container py-3 '>
+        <div className='container a py-3 '>
           <div className='navbar-brand'>
             <Link
               to='/'
@@ -87,7 +87,7 @@ const Navbar = class extends React.Component {
               <Link className='navbar-item' to='/club'>
                 Клуб
               </Link>
-              <Link className='navbar-item' to='/blog'>
+              <Link className='navbar-item' to='/news'>
                 Мэдээ мэдээлэл
               </Link>
 
@@ -95,9 +95,6 @@ const Navbar = class extends React.Component {
                 Санал хүсэлт
               </Link>
 
-              <Link className='navbar-item' to='/contact/examples'>
-                Санал хүсэлт
-              </Link>
               <Link className='navbar-item' to='/holbogdoh'>
                 Холбогдох
               </Link>

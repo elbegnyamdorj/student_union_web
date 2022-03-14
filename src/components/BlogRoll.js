@@ -12,7 +12,7 @@ class BlogRollTemplate extends React.Component {
       <div className='columns is-multiline'>
         {posts &&
           posts.map(({ node: post }) => (
-            <div className='is-parent column is-6' key={post.id}>
+            <div className='is-parent column is-6 ' key={post.id}>
               <article
                 className={`blog-list-item tile is-child box notification ${
                   post.frontmatter.featuredpost ? 'is-featured' : ''
@@ -42,18 +42,18 @@ class BlogRollTemplate extends React.Component {
                     >
                       {post.frontmatter.title}
                     </Link>
-                    <span> &bull; </span>
+                    <br />
                     <span className='subtitle is-size-5 is-block'>
                       {post.frontmatter.date}
                     </span>
                   </p>
                 </header>
-                <p>
+                <p className='level'>
                   {post.excerpt}
                   <br />
                   <br />
-                  <Link className='button' to={post.fields.slug}>
-                    Дэлгэрэнгүй унших →
+                  <Link className='level-right' to={post.fields.slug}>
+                    Дэлгэрэнгүй →
                   </Link>
                 </p>
               </article>
@@ -83,7 +83,7 @@ export default function BlogRoll() {
           ) {
             edges {
               node {
-                excerpt(pruneLength: 400)
+                excerpt(pruneLength: 200)
                 id
                 fields {
                   slug
@@ -96,7 +96,7 @@ export default function BlogRoll() {
                   featuredimage {
                     childImageSharp {
                       gatsbyImageData(
-                        width: 120
+                        width: 200
                         quality: 100
                         layout: CONSTRAINED
                       )
