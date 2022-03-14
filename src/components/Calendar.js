@@ -70,8 +70,6 @@ export default function Events() {
                   startAt
                   endAt
                   color
-
-                  calendarID
                 }
               }
             }
