@@ -1,15 +1,15 @@
-import React from "react";
-import { Link } from "gatsby";
+import React from 'react'
+import { Link } from 'gatsby'
 
-import zurag from "../../static/img/reallogo.svg";
+import zurag from '../../static/img/reallogo.svg'
 
 const Navbar = class extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       active: false,
-      navBarActiveClass: "",
-    };
+      navBarActiveClass: '',
+    }
   }
 
   toggleHamburger() {
@@ -21,37 +21,37 @@ const Navbar = class extends React.Component {
         // set the class in state for the navbar accordingly
         this.state.active
           ? this.setState({
-              navBarActiveClass: "is-active",
+              navBarActiveClass: 'is-active',
             })
           : this.setState({
-              navBarActiveClass: "",
-            });
+              navBarActiveClass: '',
+            })
       }
-    );
+    )
   }
 
   render() {
     return (
       <nav
-        className="navbar is-transparent has-shadow is-fixed-top  "
-        role="navigation"
-        aria-label="main-navigation"
+        className='navbar is-transparent has-shadow is-fixed-top  '
+        role='navigation'
+        aria-label='main-navigation'
       >
-        <div className="container a py-3 ">
-          <div className="navbar-brand">
+        <div className='container a py-3 '>
+          <div className='navbar-brand'>
             <Link
-              to="/"
-              className="navbar-item"
-              title="Logo"
-              style={{ padding: "0" }}
+              to='/'
+              className='navbar-item'
+              title='Logo'
+              style={{ padding: '0' }}
             >
-              <img src={zurag} alt="holboo" style={{ width: "230px" }} />
+              <img src={zurag} alt='holboo' style={{ width: '230px' }} />
             </Link>
             {/* Hamburger menu */}
             <div
               className={`navbar-burger burger ${this.state.navBarActiveClass}`}
-              data-target="navMenu"
-              role="menuitem"
+              data-target='navMenu'
+              role='menuitem'
               tabIndex={0}
               onKeyPress={() => this.toggleHamburger()}
               onClick={() => this.toggleHamburger()}
@@ -62,57 +62,57 @@ const Navbar = class extends React.Component {
             </div>
           </div>
           <div
-            id="navMenu"
+            id='navMenu'
             className={`navbar-menu ${this.state.navBarActiveClass}`}
-            style={{ justifyContent: "space-between" }}
+            style={{ justifyContent: 'space-between' }}
           >
-            <div className="navbar-start has-text-centered is-size-5">
-              <Link className="navbar-item " to="/">
+            <div className='navbar-start has-text-centered is-size-5'>
+              <Link className='navbar-item ' to='/'>
                 Нүүр хуудас
               </Link>
-              <div className="navbar-item has-dropdown is-hoverable">
-                <Link className="navbar-item" to="/aboutus">
+              <div className='navbar-item has-dropdown is-hoverable'>
+                <Link className='navbar-item' to='/aboutus'>
                   Бидний тухай
-                  <div class="navbar-dropdown is-boxed">
-                    <Link className="navbar-item" to="/aboutus">
+                  <div class='navbar-dropdown is-boxed'>
+                    <Link className='navbar-item' to='/aboutus'>
                       Бидэнтэй хамт
                     </Link>
-                    <hr className="navbar-divider" />
-                    <Link className="navbar-item" to="/documents">
+                    <hr className='navbar-divider' />
+                    <Link className='navbar-item' to='/documents'>
                       Баримт бичиг
+                    </Link>
+                    <hr className='navbar-divider' />
+                    <Link className='navbar-item' to='/holbogdoh'>
+                      Холбогдох
                     </Link>
                   </div>
                 </Link>
               </div>
-              <Link className="navbar-item" to="/club">
+              <Link className='navbar-item' to='/club'>
                 Клуб
               </Link>
-              <Link className="navbar-item" to="/event">
+              <Link className='navbar-item' to='/event'>
                 Арга хэмжээ
               </Link>
-              <Link className="navbar-item" to="/news">
+              <Link className='navbar-item' to='/news'>
                 Мэдээ мэдээлэл
               </Link>
               <Link className='navbar-item' to='/ufepedia'>
                 UFEpedia
               </Link>
 
-              <Link className="navbar-item" to="/contact">
+              <Link className='navbar-item' to='/contact'>
                 Санал хүсэлт
-              </Link>
-
-              <Link className="navbar-item" to="/holbogdoh">
-                Холбогдох
               </Link>
             </div>
           </div>
-          <div class="navbar-end">
-            <div class="navbar-item"></div>
+          <div class='navbar-end'>
+            <div class='navbar-item'></div>
           </div>
         </div>
       </nav>
-    );
+    )
   }
-};
+}
 
-export default Navbar;
+export default Navbar
